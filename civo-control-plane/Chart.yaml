@@ -1,0 +1,6 @@
+apiVersion: v2
+name: civo-control-plane
+description: A Helm chart for provisioning Civo control plane clusters with infrastructure and core services
+type: application
+version: 0.1.0
+appVersion: "1.0"

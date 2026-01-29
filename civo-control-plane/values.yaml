@@ -1,0 +1,48 @@
+# Workload Downstream Cluster Configuration
+# System values are populated by Konstruct at render time
+
+# Management Cluster Context
+projectClusterName: kubefirst-one-mgmt-cluster
+projectClusterRegion: us-west-2
+projectClusterAwsAccountId: "555935582951"
+projectClusterAssumeRole: arn:aws:iam::555935582951:role/crossplane-kubefirst-one-mgmt-cluster
+projectStateStoreBucket: k1-bu-mgmt-kubefirst-one-mgmt-cluster
+
+# Kubefirst Management Account
+kubefirstMgmtAccountId: "126827061464"
+kubefirstMgmtCrossplaneRole: arn:aws:iam::126827061464:role/crossplane-kubefirst-one-mgmt-cluster-kubefirst
+
+# GitOps Repository
+gitopsRepoUrl: https://github.com/gitops-ing/mgmt-cluster-gitops.git
+
+# Terraform Module URLs
+
+workloadClusterTerraformModuleUrl: git::https://github.com/gitops-ing/mgmt-cluster-gitops.git//terraform/aws/modules/workload-cluster?ref=template-engine
+
+# Terraform Bootstrap module
+# @input.type: string
+# @input.description: the complete url for the terraform module
+# e.g. git::https://github.com/gitops-ing/mgmt-cluster-gitops.git//terraform/aws/modules/bootstrap?ref=template-engine
+# @input.required: false
+workloadClusterBootstrapTerraformModuleUrl: git::https://github.com/gitops-ing/mgmt-cluster-gitops.git//terraform/aws/modules/bootstrap?ref=template-engine
+
+# Alerts/Contact
+alertsEmail: alerts@konstruct.io
+
+# Workload Cluster (from form fields)
+workloadClusterName: cluster-two-je
+workloadClusterRegion: us-west-2
+workloadNodeCount: "2"
+workloadNodeType: m5.large
+workloadAmiType: AL2_x86_64
+
+# External DNS
+# @input.type: string
+# @input.description: Domain name for external DNS in workload cluster
+# @input.required: true
+# @input.default: workload.example.com
+workloadExternalDnsDomainName: gitops.ing
+
+# DEX OIDC
+dexProviderName: ""
+dexDomainName: ""
