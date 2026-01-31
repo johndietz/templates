@@ -1,2 +1,6 @@
 # Minimal values for civo-control-plane
+
+# Cluster type metadata
+clusterType: control-plane
+
 workloadClusterName: civo-control-plane
