@@ -1,6 +1,36 @@
-# Minimal values for civo-control-plane
+# Civo Control Plane Platform Configuration
 
 # Cluster type metadata
 clusterType: control-plane
 
-workloadClusterName: civo-control-plane
+# Cluster naming
+# @input.type: string
+# @input.description: Name for this control plane cluster
+# @input.required: true
+clusterName: ""
+
+# Domain configuration
+# @input.type: string
+# @input.description: Base domain for platform services (e.g., example.com)
+# @input.required: true
+domainName: ""
+
+# Cloud provider region
+# @input.type: string
+# @input.description: Civo region
+# @input.required: true
+# @input.default: nyc1
+cloudRegion: nyc1
+
+# External DNS
+# @input.type: string
+# @input.description: DNS provider for external-dns
+# @input.required: true
+# @input.default: civo
+externalDnsProvider: civo
+
+# Contact email for Let's Encrypt certificate notifications
+# @input.type: string
+# @input.description: Email address for Let's Encrypt notifications
+# @input.required: true
+alertsEmail: ""
